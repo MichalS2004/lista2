@@ -1,0 +1,31 @@
+wartosci_funkcji = [0.0] * 10^6
+wartosci_funkcji_odwrotnej = [0.0] * 10^6
+wartosc_pocz = 100
+epsilon = 10^(-10)
+lista_x = zeros(10^6)
+
+pom = 0
+lista_x[1] = 0.001
+lista_x[2] = 0.002
+
+for i in 3: 10^6
+    lista_x[i] =  lista_x[i-1] + 0.001
+end
+    
+function ile_odejmujemy(x)
+     exp(-x) + exp(-2x) - 1
+end
+
+for i in 2:10^6
+    wartosci_funkcji[i] =  ile_odejmujemy(lista_x[i])
+end
+
+a = wartosci_funkcji[1]
+b = wartosci_funkcji[10^6]
+
+print(a)
+print(' ')
+print(b)
+
+
+    
