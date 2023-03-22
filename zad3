@@ -1,0 +1,35 @@
+'To jest zadanie 2b'
+
+
+using Plots
+
+L = 100000
+r = 0.1
+
+Populacja = zeros(1000)
+Indeksy = 1:1:1000
+
+
+function model_populacji_b(x)
+    Populacja_lokalna = zeros(1000)
+    Populacja_lokalna[1] = x
+        
+    for i in 2:1000
+        Populacja_lokalna[i] = Populacja_lokalna[i-1] + (r * Populacja_lokalna[i-1] * (1 - Populacja_lokalna[i-1]/(L)))
+    end
+    return Populacja_lokalna
+end
+
+Populacja = model_populacji_b(1000)
+print(Populacja)
+
+scatter(Populacja)
+        
+    
+
+'To jest zad3 i nie działa'
+
+
+
+
+
